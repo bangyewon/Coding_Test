@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Solution {
     // 트럭들 일차선 다리를 정해진 순으로 건넘 -> FIFO로 큐 이용하자
     // 다리에 트럭 최대 bridge_length 올라갈 수 있음, wegiht이하의 무게 견디기 가능
