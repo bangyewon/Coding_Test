@@ -1,27 +1,27 @@
 import java.util.*;
 import java.awt.Point;
-public class Main {
+public class Main4 {
     // 최단경로 찾기 : BFS 사용이 효과적일 것
     static boolean[][] visited; // 방문 여부
     static int[][] graph; // NxM으로 그래프 구현
     // static int count;
     static int N;
     static int M;
-    static int[] dx = {-1, 1, 0, 0}; // 상하좌우 이동
-    static int[] dy = {0, 0, -1, 1}; // 상하좌우 이동
+    static int[] dx = {-1, 1, 0, 0}; // 상하좌우 이동 : x
+    static int[] dy = {0, 0, -1, 1}; // 상하좌우 이동 : y
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // 지나야 하는 최소 칸 수 받기
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+        N = sc.nextInt();
+        M = sc.nextInt();
         graph = new int[N][M];
         visited = new boolean[N][M];
         // 그래프 구현
-        for(int i = 1; i <= N; i++) {
+        for(int i = 0; i < N; i++) {
             String line = sc.next();
-            for(int j = 1; j <= M; j++) {
+            for(int j = 0; j < M; j++) { // StringIndexOutOfBounds 에러 수정 -> index for문 잘못 참조함
                 // 붙어서 입력이 주어진다  : Line으로 받아서 정수로 변환하자
-                graph[i][j] = line.charAt(j) - 0;
+                graph[i][j] = line.charAt(j) - '0';
             }
         }
         // for(int j = 1; j <= N; j++) {
@@ -64,7 +64,6 @@ public class Main {
                 // 도착 칸이면 그 값이 지나야 하는 최소 칸의 수
                 graph[nX][nY] = graph[current.x][current.y] + 1;
             }
-            
         }
     }
 }
