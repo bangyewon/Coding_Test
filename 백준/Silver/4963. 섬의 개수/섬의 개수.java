@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main{
     // 지도에서 섬의 개수를 세는 프로그램
-    static int[] dx = { -1, -1, -1, 0, 1, 1, 1, 0 }; // 8방향 탐색
-    static int[] dy = { -1, 0, 1, 1, 1, 0, -1, -1 }; // 8방향 탐색
+    static int[] dx = { -1, -1, -1, 0, 1, 1, 1, 0 }; // x축 이동
+    static int[] dy = { -1, 0, 1, 1, 1, 0, -1, -1 }; // y축 이동
     static int[][] ground;
     static boolean[][] visited;
     static int w;
@@ -12,7 +12,7 @@ public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        while (true) {
+        while (true) { // h,w가 0일때 종료하기전까지 계속돌자
             w = sc.nextInt(); // 너비
             h = sc.nextInt(); // 높이
             if (w == 0 && h == 0) break; // 종료 조건
